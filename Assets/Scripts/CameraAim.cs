@@ -37,8 +37,8 @@ public class CameraAim : MonoBehaviour
         //aimDirection.x *= Screen.width / Screen.height;
         //Debug.Log("Viewport:"+mouseViewportPos+"    /aim:"+ aimDirection);
 
-        Vector3 aimPosition = player.position + aimDirection * aimRange;
-        Vector3 cameraPosition = Vector3.Lerp(player.position, player.position + aimDirection * cameraRange, cameraOffsetSmoothing.Evaluate(aimDirection.magnitude / 1));
+        Vector3 aimPosition = PlayerController.instance.weapon.gunAnchor.position + aimDirection * aimRange;
+        Vector3 cameraPosition = Vector3.Lerp(PlayerController.instance.weapon.gunAnchor.position, PlayerController.instance.weapon.gunAnchor.position + aimDirection * cameraRange, cameraOffsetSmoothing.Evaluate(aimDirection.magnitude / 1));
 
 
 
@@ -46,17 +46,10 @@ public class CameraAim : MonoBehaviour
         reticule.position = aimPosition;
         playerTransformCamera.position = cameraPosition;
 
-        //Body Direction
-        if (aimDirection.x <= 0)
-            player.localScale = new Vector3(-1, 1, 1);
-        else
-            player.localScale = new Vector3(1, 1, 1);
+
 
         //Gun Aim
-
-        Quaternion rotation = Quaternion.LookRotation(aimDirection);
-        rotation.x = 0;
-        rotation.y = 0;
-        playerGun.rotation = rotation;
+        playerGun.localEulerAngles = new Vector3(0, 0, Vector2.SignedAngle(Vector3.right, aimDirection.normalized));
+        
     }
 }
