@@ -21,4 +21,5 @@ MonoBehaviour:
   projectileEachShot: 10
   projectileSpeed: 60
   projectileRange: 7.5
-  reloadCooldown: 2
+  reloadCooldown: 1
+  reloadOneByOne: 1

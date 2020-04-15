@@ -1466,6 +1466,7 @@ MonoBehaviour:
   magazineList: 00000000000000000000000000000000
   currentWeapon: 0
   isReloading: 0
+  isCancelingReload: 0
   reloadCooldown: 0
 --- !u!114 &846179873
 MonoBehaviour:
@@ -1482,7 +1483,7 @@ MonoBehaviour:
   character: {fileID: 0}
   weapon: {fileID: 0}
   maxStamina: 100
-  consumeRateStamina: 10
+  consumeRateStamina: 25
   currentStamina: 100
   switchWeaponCooldown: 1
   switchWeaponTimer: 0

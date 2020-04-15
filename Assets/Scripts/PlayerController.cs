@@ -103,7 +103,6 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 weapon.isCancelingReload = true;
-                Debug.Log("CancelReload");
             }
             if (weapon.reloadCooldown > 0)
                 weapon.reloadCooldown -= Time.deltaTime;
