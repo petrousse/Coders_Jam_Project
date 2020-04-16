@@ -25,11 +25,8 @@ public class Paint : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, distance);
 
-        if (hit.collider != null)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, transform.position + transform.right, distance);
-            range -= distance;
-        }
+        transform.position = Vector3.MoveTowards(transform.position, transform.position + transform.right, distance);
+        range -= distance;
     }
 
     public void Init(float speed, float range)
