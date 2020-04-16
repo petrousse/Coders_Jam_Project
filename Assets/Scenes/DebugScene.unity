@@ -1456,7 +1456,10 @@ MonoBehaviour:
   muzzle: {fileID: 1050330697}
   gunAnchor: {fileID: 1039047808}
   projectileFolder: {fileID: 1893245686}
+  paintFolder: {fileID: 1106739170}
   projectilePrefab: {fileID: 5653917542906449062, guid: a69e4ee044504b247ad436e183e2c568,
+    type: 3}
+  painttrail: {fileID: 602135898106887053, guid: 2f94183efb19f77419427fb48efc30f4,
     type: 3}
   weaponList:
   - {fileID: 11400000, guid: 62ea9f7d67a23b748bbace47bad9a286, type: 2}
@@ -1839,6 +1842,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 636409261}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1106739169
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1106739170}
+  m_Layer: 0
+  m_Name: PaintFolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1106739170
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106739169}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1117788944
 GameObject:

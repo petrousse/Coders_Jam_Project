@@ -8,7 +8,9 @@ public class WeaponController : MonoBehaviour
     public Transform muzzle;
     public Transform gunAnchor;
     public Transform projectileFolder;
+    public Transform paintFolder;
     public GameObject projectilePrefab;
+    public GameObject painttrail;
     public WeaponPreset[] weaponList = new WeaponPreset[4];
     public int[] magazineList = new int[4];
     public int currentWeapon = 0;
@@ -52,8 +54,11 @@ public class WeaponController : MonoBehaviour
             Vector3 direction = gunAnchor.rotation.eulerAngles;
             direction.z += UnityEngine.Random.Range(-weaponList[currentWeapon].accuracyAngle / 2, weaponList[currentWeapon].accuracyAngle / 2);
             GameObject gameObject = Instantiate(projectilePrefab, muzzle.position, Quaternion.Euler(direction), projectileFolder);
+            GameObject gameObjectTrail = Instantiate(painttrail, muzzle.position, Quaternion.Euler(direction), paintFolder);
             Projectile projectile = gameObject.GetComponent<Projectile>();
+            Paint projectilepaint = gameObjectTrail.GetComponent<Paint>();
             projectile.Init(weaponList[currentWeapon].projectileSpeed, weaponList[currentWeapon].projectileRange);
+            projectilepaint.Init(weaponList[currentWeapon].projectileSpeed, weaponList[currentWeapon].projectileRange);
         }
     }
 }
