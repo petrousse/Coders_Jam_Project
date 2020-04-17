@@ -11,9 +11,11 @@ public class WeaponController : MonoBehaviour
     public Transform paintFolder;
     public GameObject projectilePrefab;
     public GameObject painttrail;
+    public Material material;
     public WeaponPreset[] weaponList = new WeaponPreset[4];
     public int[] magazineList = new int[4];
     public int currentWeapon = 0;
+    public int order = 0;
 
     private float shotTimer = 0f;
     [HideInInspector] public bool isReloading = false;
@@ -51,12 +53,17 @@ public class WeaponController : MonoBehaviour
         magazineList[currentWeapon]--;
         for (int i = 0; i < weaponList[currentWeapon].projectileEachShot; i++)
         {
+            order++;
             Vector3 direction = gunAnchor.rotation.eulerAngles;
             direction.z += UnityEngine.Random.Range(-weaponList[currentWeapon].accuracyAngle / 2, weaponList[currentWeapon].accuracyAngle / 2);
             GameObject gameObject = Instantiate(projectilePrefab, muzzle.position, Quaternion.Euler(direction), projectileFolder);
             GameObject gameObjectTrail = Instantiate(painttrail, muzzle.position, Quaternion.Euler(direction), paintFolder);
+            TrailRenderer trail = gameObjectTrail.GetComponent<TrailRenderer>();
+            trail.material.SetColor("_Color", new Color (UnityEngine.Random.Range(0f, 1f), UnityEngine.Random.Range(0f, 1f), UnityEngine.Random.Range(0f, 1f)));
+            trail.sortingOrder = order;
             Projectile projectile = gameObject.GetComponent<Projectile>();
             Paint projectilepaint = gameObjectTrail.GetComponent<Paint>();
+
             projectile.Init(weaponList[currentWeapon].projectileSpeed, weaponList[currentWeapon].projectileRange);
             projectilepaint.Init(weaponList[currentWeapon].projectileSpeed, weaponList[currentWeapon].projectileRange);
         }

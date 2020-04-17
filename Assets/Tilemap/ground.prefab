@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5210116663830874039}
   - component: {fileID: 3350391916657428430}
   - component: {fileID: 5381491586111444680}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: Layer1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,6 +41,15 @@ Tilemap:
   m_GameObject: {fileID: 873555112812760860}
   m_Enabled: 1
   m_Tiles:
+  - first: {x: -3, y: 0, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
   - first: {x: -1, y: 1, z: 0}
     second:
       serializedVersion: 2
@@ -76,6 +85,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 7b8172fc20fd499448201081383c099d, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 22e04d6cef6b0c240b238690e085e3fa, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: a01440cc52d82ae4e9b9e0391c4c956f, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 44cced520ecfd9f4292979a4fe8268c4, type: 3}
@@ -83,8 +94,10 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 17198718c5735204999fb13dc36e290f, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: b6fc60785b6a795478135ce6f7712c5a, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: e43d20409ee85bb49b205ca3261320f8, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 3
+  - m_RefCount: 4
     m_Data:
       e00: 1
       e01: 0
@@ -103,13 +116,13 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 3
+  - m_RefCount: 4
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -1, y: 0, z: 0}
-  m_Size: {x: 3, y: 2, z: 1}
+  m_Origin: {x: -3, y: 0, z: 0}
+  m_Size: {x: 5, y: 2, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -186,7 +199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6995063599103340624}
   - component: {fileID: 2506395858407059225}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}

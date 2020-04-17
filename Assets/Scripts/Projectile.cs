@@ -27,7 +27,10 @@ public class Projectile : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, distance);
         if(hit.collider != null)
         {
-
+            if (hit.collider.tag == "enemy")
+            {
+                Destroy(hit.transform.gameObject);
+            }
             Destroy(gameObject);
         }
         else
@@ -35,9 +38,10 @@ public class Projectile : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, transform.position + transform.right, distance);
             range -= distance;
         }
+
     }
 
-    public void Init(float speed, float range)
+        public void Init(float speed, float range)
     {
         this.speed = speed;
         this.range = range;
