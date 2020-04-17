@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Follow : MonoBehaviour
 {
@@ -33,9 +34,7 @@ public class Follow : MonoBehaviour
     {
         if (coll.transform.tag == "Player")
         {
-            player.gameObject.SetActive (false);
-            canva.gameObject.SetActive(false);
-            Time.timeScale = 0f;
+            SceneManager.LoadScene(0);
         }
     }
         void moveCharacter(Vector2 direction)

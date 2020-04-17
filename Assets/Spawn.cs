@@ -9,7 +9,7 @@ public class Spawn : MonoBehaviour
     float randX;
     float randY;
     Vector2 whereToSpawn;
-    public float spawnRate = 2f;
+    public float spawnRate = 1f;
     float nextSpawn = 0.0f;
     void Start()
     {

@@ -29,6 +29,7 @@ public class Projectile : MonoBehaviour
         {
             if (hit.collider.tag == "enemy")
             {
+                CameraZoom.instance.startzoomcourout();
                 Destroy(hit.transform.gameObject);
             }
             Destroy(gameObject);
